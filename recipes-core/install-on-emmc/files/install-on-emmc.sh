@@ -107,7 +107,7 @@ else
 
 	echo "Hold USER button for 5 seconds to confirm"
 	for N in $(seq 50); do
-		if [ $(gpioget ${GPIO_PIN}) = 1 ]; then
+		if [ $(gpioget ${GPIO_PIN}) -eq 1 ]; then
 			echo "Terminated - rebooting..."
 			reboot
 		fi
